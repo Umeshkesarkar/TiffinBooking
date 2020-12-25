@@ -1,0 +1,306 @@
+
+<html>
+<head>
+	
+	<style>
+  
+    body {
+  background: lightgrey;
+}
+#header1{
+      width: 100%;
+      height: 150px;
+      background: black;
+      color: white;
+    }
+    #adminlogo{
+      background: white;
+      border-radius: 50px;
+    }
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+   font-family: bazooka;
+  font-size: 20px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color: #111;
+}
+
+.active {
+  background-color: #555;
+}
+		
+		html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button1 {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button1:hover {
+  background-color: #555;
+}
+.v {
+  position: center;
+}
+
+	</style>
+<script>
+function cart(id,n){
+//alert("Item id is: "+id+' qty: '+n);
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //document.getElementById("demo").innerHTML = this.responseText;\
+      alert(this.responseText);
+    }
+  };
+  xhttp.open("GET", "addincart.php?id="+id+"&qty="+n, true);
+  xhttp.send();
+  //window.open("addincart.php?id="+id+"&qty="+n);
+}
+
+function qty(n){
+//alert('Item quantity is: '+n);
+}
+</script>
+</head>
+<body>
+  <div id="header1">
+    <center><img src="pic2edit.jpg" alt="adminlogo" id="adminlogo"><!--<br>This is Admin Panel, Please proced with caution!-->
+    </center>
+    
+  </div>
+  <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href=".html">Menu</a></li>
+  <li><a href="Uabout.html">About us</a></li>
+  <li><a href="cont.html">Contact</a></li>
+  <li><a href="cart.php">Cart</a></li>
+  <li><a href="order.php">My Orders</a></li>
+  
+
+  <li style="float:right"><a class="active" href="logout.php">Logout</a></li>
+</ul>
+
+<h1>Tiffin Service Booking</h1>
+
+
+<br><br>
+  
+  <label for="VEG">VEG</label><br>
+  <br>
+  <br>
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="veg1.jpg" alt="Panner" style="width:100%">
+      <div class="container">
+        <h2>सरपंच थाळी</h2>
+        <p class="title">VEG MENU</p>
+        <p>2 Chapatis,2 Vegetable,1 Dal,1 Rice,1 Curd ,1 Papad</p>
+        <p>Prize :-350/-</p>
+        <select id='q1'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+        <button  onclick="cart(1,document.getElementById('q1').value)">ADD TO CART</button>
+<br><br>
+      </div>
+    </div>
+  </div>
+
+   <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="veg2.jpg" alt="Panner" style="width:100%">
+      <div class="container">
+        <h2>आमदार थाळी</h2>
+        <p class="title">VEG MENU</p>
+        <p>3 Chapatis,2 Vegetable,1 Dal,1 Rice,1 Curd ,1 Papad</p>
+        <p>Prize :-450/-</p>
+        <select id='q2'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+        <button  onclick="cart(2,document.getElementById('q2').value)">ADD TO CART</button>
+<br><br>
+      </div>
+    </div>
+  </div>
+     <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="veg3.jpg" alt="Panner" style="width:100%">
+      <div class="container">
+        <h2>खासदार थाळी</h2>
+        <p class="title">VEG MENU</p>
+        <p>4 Chapatis,2 Vegetable,1 Dal,1 Rice,1 Curd ,1 Papad</p>
+        <p>Prize :-550/-</p>
+        <select id='q3'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+        <button  onclick="cart(3,document.getElementById('q3').value)">ADD TO CART</button>
+<br><br>
+      </div>
+    </div>
+  </div>
+  <br>
+
+
+  <br>
+
+
+
+<!--  <form action="">-->
+  
+  <label for="NON-VEG">NON-VEG</label><br>
+  <br>
+  <br>
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="nonveg1.jpg" alt="Panner" style="width:100%">
+      <div class="container">
+        <h2>कोळंबी मसाला थाळी</h2>
+        <p class="title">NON-VEG MENU</p>
+        <p>Prawns fry pieces,1 Grevy,1 Masala Rice,1 Salad,1 boiled Egg</p>
+        <p>Prize :-400/-</p>
+        <select id='q4'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+        <button  onclick="cart(4,document.getElementById('q4').value)">ADD TO CART</button>
+<br><br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="nonveg2.jpg" alt="Panner" style="width:100%">
+      <div class="container">
+        <h2>मटन मसाला थाळी</h2>
+        <p class="title">NON-VEG MENU</p>
+        <p>Mutton Fry Pieces,1 Gravy,1 Masala Rice,1 Salad,1 boiled Egg</p>
+        <p>Prize :-350/-</p>
+        <select id='q5'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+        <button  onclick="cart(5,document.getElementById('q5').value)">ADD TO CART</button>
+<br><br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="nonveg3.jpg" alt="Panner" style="width:100%">
+      <div class="container">
+        <h2>चिकन मसाला थाळी</h2>
+        <p class="title">NON-VEG MENU</p>
+        <p>Chicken Fry Pieces,1 Chicken Gravy,1 Biryani Rice,1 Salad,2 Boiled Egg</p>
+        <p>Prize :-300/-</p>
+        <select id='q6'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+        <button  onclick="cart(6,document.getElementById('q6').value)">ADD TO CART</button>
+<br><br>
+      </div>
+    </div>
+  </div>
+  <br>
+
+
+  <br>
+<br>
+
+
+</body>
+</html>
